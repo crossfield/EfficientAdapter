@@ -424,7 +424,7 @@ public abstract class AbsViewHolderAdapter<T> extends RecyclerView.Adapter<AbsVi
     }
 
     private void onClickItem(AbsViewHolder viewHolder, int position) {
-        if (mOnItemClickListener != null) {
+        if (mOnItemClickListener != null && position >= 0) {
             View view = viewHolder.getView();
             T object = get(position);
             mOnItemClickListener.onItemClick(this, view, object, position);
@@ -432,7 +432,7 @@ public abstract class AbsViewHolderAdapter<T> extends RecyclerView.Adapter<AbsVi
     }
 
     private void onLongClickItem(AbsViewHolder viewHolder, int position) {
-        if (mOnItemLongClickListener != null) {
+        if (mOnItemLongClickListener != null && position >= 0) {
             View view = viewHolder.getView();
             T object = get(position);
             mOnItemLongClickListener.onLongItemClick(this, view, object, position);
